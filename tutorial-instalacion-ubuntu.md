@@ -175,7 +175,7 @@ docker compose up -d
   docker compose logs -f
   ```
 * **¿Que ocurre si cambio de red o de IP?**
-  1. Obtener la nueva IP con `hostname -I | awk '{print $1}' 
+  1. Obtener la nueva IP con ``hostname -I | awk '{print $1}' `` 
   2. Editar la variable `HOST_IP` en tu archivo `.env` con la nueva IP 
   3. Ejecutar estos dos comandos para actualizar el contenedor y autorizar el nuevo dominio:
   ```bash
