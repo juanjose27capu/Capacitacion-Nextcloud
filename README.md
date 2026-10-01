@@ -44,7 +44,7 @@ Acceda a la Guía de mantenimiento, copias de seguridad y actualizaciones para c
 
 Para que todos los enlaces de este documento funcionen correctamente, se organizan los archivos y directorios del repositorio bajo el siguiente esquema:
 
-``
+```
 Capacitacion-Nextcloud/
 ├── README.md
 ├── instalacion/
