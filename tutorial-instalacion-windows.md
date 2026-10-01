@@ -187,12 +187,14 @@ docker compose up -d
   ```powershell
   docker compose logs -f
   ```
-* **¿Qué ocurre si cambio de red o de IP?**
-  Editá la variable `HOST_IP` en el archivo `.env` (`notepad .env`) con la nueva IP y ejecutar estos dos comandos para actualizar el contenedor y autorizar el nuevo dominio:
+* **¿Que ocurre si cambio de red o de IP?**
+  1. Obtener la nueva IP con `hostname -I | awk '{print $1}' 
+  2. Editar la variable `HOST_IP` en tu archivo `.env` con la nueva IP 
+  3. Ejecutar estos dos comandos para actualizar el contenedor y autorizar el nuevo dominio:
   ```powershell
   docker compose up -d
-  docker compose exec --user www-data app php occ config:system:set trusted_domains 4 --value="NUEVA_IP:8080" # Acá la nueva IP
-  ```
+  docker compose exec --user www-data app php occ config:system:set trusted_domains 4 --value="NUEVA_IP:8080" # < ----- Acá la nueva IP
+  ``` 
 * **¿El Firewall de Windows bloquea la conexión desde el celular?**
   Si no se puede entrar desde el móvil aunque estén en la misma red, abrir PowerShell **como Administrador** y ejecutar esta regla para habilitar el puerto `8080`:
   ```powershell

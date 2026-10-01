@@ -175,8 +175,10 @@ docker compose up -d
   docker compose logs -f
   ```
 * **¿Que ocurre si cambio de red o de IP?**
-  Editá la variable `HOST_IP` en tu archivo `.env` con la nueva IP y ejecuta estos dos comandos para actualizar el contenedor y autorizar el nuevo dominio:
+  1. Obtener la nueva IP con `hostname -I | awk '{print $1}' 
+  2. Editar la variable `HOST_IP` en tu archivo `.env` con la nueva IP 
+  3. Ejecutar estos dos comandos para actualizar el contenedor y autorizar el nuevo dominio:
   ```bash
   docker compose up -d
-  docker compose exec --user www-data app php occ config:system:set trusted_domains 4 --value="NUEVA_IP:8080" #Acá la nueva IP
+  docker compose exec --user www-data app php occ config:system:set trusted_domains 4 --value="NUEVA_IP:8080" # < ----- Acá la nueva IP
   ```
