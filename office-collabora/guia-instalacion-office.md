@@ -33,8 +33,8 @@ Para habilitar la edición de documentos se requieren **dos componentes compleme
 
 ![Paso 2 - Instalación de Collabora CODE Server](./img/paso2-instalacion%20collabora.png)
 
-2. **La interfaz de usuario del editor (¡Atención a la app correcta!):**
-   * En el buscador de aplicaciones, buscar **`richdocuments`** o **`Collabora`**.
+2. **La interfaz de usuario del editor:**
+   * En el buscador de aplicaciones, buscar **`Nextcloud Office (Collabora)`** o **`Collabora`**.
    * Localizar e instalar la aplicación oficial **Nextcloud Office** desarrollada por **Nextcloud GmbH / Collabora Productivity** (identificador técnico `richdocuments`).
    * > ⚠️ **Detalle importante:** Evitar instalar conectores de terceros como *Ascensio System SIA / EuroOffice*, ya que corresponden a OnlyOffice y no reconocen el servidor CODE integrado. Debemos instalar la versión oficial de **Nextcloud GmbH / Collabora**.
    * Hacer clic en **Descargar y activar** (*Download and enable*).
@@ -47,9 +47,8 @@ Para habilitar la edición de documentos se requieren **dos componentes compleme
 
 1. Una vez finalizada la instalación de ambas aplicaciones, hacer clic nuevamente en el menú de usuario (esquina superior derecha).
 2. Seleccionar **Ajustes de administración** (*Administration settings*).
-3. En el panel lateral izquierdo, desplazarse hasta la sección **Administración** y seleccionar **Office** (o **Nextcloud Office**).
+3. En el panel lateral izquierdo, desplazarse hasta la sección **Administración** y seleccionar **NextCloud Office (Collabora)**.
 
-![Paso 3 - Ajustes de administración Office](./img/paso3-ajustes-office.png)
 
 ---
 
