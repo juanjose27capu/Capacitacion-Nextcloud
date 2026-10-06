@@ -22,14 +22,16 @@ winget install -e --id Docker.DockerDesktop
 ## Paso 1: Obtener la IP y validar la red antes de empezar
 
 1. **Verificación de red:** 
-   * Asegurarse de que tanto la PC que hará de servidor como las demás computadoras y dispositivos móviles estén conectados a una red sin aislamiento de clientes (*AP Isolation*). En caso de trabajar en una máquina virtual (VirtualBox/VMware), es importante que la placa de red esté configurada en modo **Adaptador Puente (Bridged)** y no en **NAT.
+   * Asegurarse de que tanto la PC que hará de servidor como las demás computadoras y dispositivos móviles estén conectados a una red sin aislamiento de clientes (*AP Isolation*). En caso de trabajar en una máquina virtual (VirtualBox/VMware), es importante que la placa de red esté configurada en modo **Adaptador Puente (Bridged)** y no en **NAT**.
    * **Perfil de red en Windows:** Ir a la configuración de Red de Windows y verificar que el perfil de la red esté marcado como Red Privada (si está en *Red Pública*, el Firewall de Windows bloqueará la conexión desde el celular).
-1. Abrir **PowerShell** y ejecutar el siguiente comando para obtener únicamente la dirección IP local real de la PC (ignorando los adaptadores virtuales de Docker/WSL):
+2. Abrir **PowerShell** y ejecutar el siguiente comando para obtener únicamente la dirección IP local real de la PC (ignorando los adaptadores virtuales de Docker/WSL):
 
 ```powershell
 (Get-NetIPConfiguration | Where-Object { $_.IPv4DefaultGateway -ne $null }).IPv4Address.IPAddress
 ```
 *(Alternativamente, se puede ejecutar `ipconfig` y buscar la **Dirección IPv4** correspondiente al **Adaptador de LAN inalámbrica Wi-Fi** o **Ethernet**).*
+
+![Paso 1 - Obtener la IP local](./instalacion/img/windows/paso1.png)
 
 ---
 
@@ -42,6 +44,8 @@ cd $HOME\Desktop
 mkdir nube-local
 cd nube-local
 ```
+
+![Paso 2 - Crear carpeta del proyecto](./instalacion/img/windows/paso2.png)
 
 ---
 
@@ -71,6 +75,8 @@ NEXTCLOUD_ADMIN_PASSWORD=admin123
 ```
 
 > **¿Por qué definimos `HOST_IP` acá?** Centralizar la IP en el archivo `.env` permite inyectarla automáticamente en la configuración inicial del contenedor sin tener que ejecutar múltiples comandos manuales por consola después de la instalación.
+
+![Paso 3 - Configurar archivo .env](./instalacion/img/windows/paso3.png)
 
 ---
 
@@ -136,11 +142,15 @@ networks:
 
 > **Nota:** La imagen oficial `nextcloud:apache` acepta estas variables de entorno nativas para configurar los dominios de confianza (`NEXTCLOUD_TRUSTED_DOMAINS`) durante la instalación inicial. Además, las variables `OVERWRITE*` crean automáticamente el archivo `reverse-proxy.config.php` (esencial para las conexiones en red local) cada vez que el contenedor arranca. Así, cuando se inicia sesión desde la app de Android o iOS, el servidor sabe que debe devolver el token de acceso a `http://HOST_IP:8080` y no a `localhost`.
 
+![Paso 4 - Crear compose.yaml](./instalacion/img/windows/paso4.png)
+
 ---
 
 ## Paso 5: Levantar los contenedores
 
-En PowerShell, dentro de la carpeta `nube-local`, ejecutar:
+> **Importante (Verificación previa):** Asegurarse de que la aplicación **Docker Desktop** esté abierta y ejecutándose en segundo plano (verificar que el motor indique *Engine running* con el ícono de la ballena en verde) antes de correr el siguiente comando.
+
+1. En PowerShell, dentro de la carpeta `nube-local`, ejecutar:
 
 ```powershell
 docker compose up -d
@@ -148,16 +158,20 @@ docker compose up -d
 
 *(Si aparece una ventana emergente del Firewall de Windows Defender solicitando permisos para Docker, marcar las casillas de redes privadas/públicas y hacer clic en **Permitir acceso**).*
 
-> **Importante:** La primera vez puede tardar entre 2 y 3 minutos mientras descarga las imágenes e inicializa la base de datos. Es crucial esperar a que finalice antes de intentar entrar desde el navegador.
+![Paso 5 - Levantar contenedores](./instalacion/img/windows/paso51.png)
 
-1. Para verificar que Nextcloud haya terminado de instalarse, ejecutar el siguiente comando y comprobar que en las últimas líneas aparezca `apache2 -D FOREGROUND`:
+> **Nota sobre los tiempos:** La primera vez puede tardar entre 2 y 3 minutos mientras descarga las imágenes e inicializa la base de datos. Es crucial esperar a que finalice antes de intentar entrar desde el navegador.
+
+2. Para verificar que Nextcloud haya terminado de instalarse, ejecutar el siguiente comando y comprobar que en las últimas líneas aparezca `apache2 -D FOREGROUND`:
    ```powershell
    docker compose logs --tail 5 app
    ```
-2. Verificar que los dos contenedores estén en estado `Up` (`running`):
+3. Verificar que los dos contenedores estén en estado `Up` (`running`):
    ```powershell
    docker compose ps
    ```
+
+![Paso 5 - Verificación de contenedores](./instalacion/img/windows/paso52.png)
 
 ---
 
@@ -166,10 +180,15 @@ docker compose up -d
 1. **Desde el navegador de la PC:**
    * Ingresar a `http://TU_IP:8080` (por ejemplo, `http://10.0.7.13:8080`).
    * Iniciar sesión con el usuario **`admin`** y la contraseña **`admin123`**.
+
+![Paso 6 - Inicio de sesión desde el navegador de la PC](./instalacion/img/windows/paso61.png)
+
 2. **Desde el celular (Navegador o App oficial de Nextcloud):**
    * Asegurarse de estar conectado a la misma red Wi-Fi que el servidor.
    * Escribir la dirección completa incluyendo `http://` y el puerto `:8080`:
      `http://TU_IP:8080`
+
+![Paso 6 - Conexión desde dispositivo móvil](./instalacion/img/windows/paso62.jpeg)
 
 ---
 
