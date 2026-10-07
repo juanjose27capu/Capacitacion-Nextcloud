@@ -31,7 +31,7 @@ winget install -e --id Docker.DockerDesktop
 ```
 *(Alternativamente, se puede ejecutar `ipconfig` y buscar la **Dirección IPv4** correspondiente al **Adaptador de LAN inalámbrica Wi-Fi** o **Ethernet**).*
 
-![Paso 1 - Obtener la IP local](./instalacion/windows/paso1.png)
+![Paso 1 - Obtener la IP local](windows/paso1.png)
 
 ---
 
@@ -45,7 +45,7 @@ mkdir nube-local
 cd nube-local
 ```
 
-![Paso 2 - Crear carpeta del proyecto](./instalacion/windows/paso2.png)
+![Paso 2 - Crear carpeta del proyecto](windows/paso2.png)
 
 ---
 
@@ -76,7 +76,7 @@ NEXTCLOUD_ADMIN_PASSWORD=admin123
 
 > **¿Por qué definimos `HOST_IP` acá?** Centralizar la IP en el archivo `.env` permite inyectarla automáticamente en la configuración inicial del contenedor sin tener que ejecutar múltiples comandos manuales por consola después de la instalación.
 
-![Paso 3 - Configurar archivo .env](./instalacion/windows/paso3.png)
+![Paso 3 - Configurar archivo .env](windows/paso3.png)
 
 ---
 
@@ -142,7 +142,7 @@ networks:
 
 > **Nota:** La imagen oficial `nextcloud:apache` acepta estas variables de entorno nativas para configurar los dominios de confianza (`NEXTCLOUD_TRUSTED_DOMAINS`) durante la instalación inicial. Además, las variables `OVERWRITE*` crean automáticamente el archivo `reverse-proxy.config.php` (esencial para las conexiones en red local) cada vez que el contenedor arranca. Así, cuando se inicia sesión desde la app de Android o iOS, el servidor sabe que debe devolver el token de acceso a `http://HOST_IP:8080` y no a `localhost`.
 
-![Paso 4 - Crear compose.yaml](./instalacion/windows/paso4.png)
+![Paso 4 - Crear compose.yaml](windows/paso4.png)
 
 ---
 
@@ -158,7 +158,7 @@ docker compose up -d
 
 *(Si aparece una ventana emergente del Firewall de Windows Defender solicitando permisos para Docker, marcar las casillas de redes privadas/públicas y hacer clic en **Permitir acceso**).*
 
-![Paso 5 - Levantar contenedores](./instalacion/windows/paso51.png)
+![Paso 5 - Levantar contenedores](windows/paso51.png)
 
 > **Nota sobre los tiempos:** La primera vez puede tardar entre 2 y 3 minutos mientras descarga las imágenes e inicializa la base de datos. Es crucial esperar a que finalice antes de intentar entrar desde el navegador.
 
@@ -171,7 +171,7 @@ docker compose up -d
    docker compose ps
    ```
 
-![Paso 5 - Verificación de contenedores](./instalacion/windows/paso52.png)
+![Paso 5 - Verificación de contenedores](windows/paso52.png)
 
 ---
 
