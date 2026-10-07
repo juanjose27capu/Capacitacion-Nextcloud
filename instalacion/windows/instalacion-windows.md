@@ -31,7 +31,7 @@ winget install -e --id Docker.DockerDesktop
 ```
 *(Alternativamente, se puede ejecutar `ipconfig` y buscar la **Dirección IPv4** correspondiente al **Adaptador de LAN inalámbrica Wi-Fi** o **Ethernet**).*
 
-![Paso 1 - Obtener la IP local](./instalacion/img/windows/paso1.png)
+![Paso 1 - Obtener la IP local](./instalacion/windows/paso1.png)
 
 ---
 
@@ -45,7 +45,7 @@ mkdir nube-local
 cd nube-local
 ```
 
-![Paso 2 - Crear carpeta del proyecto](./instalacion/img/windows/paso2.png)
+![Paso 2 - Crear carpeta del proyecto](./instalacion/windows/paso2.png)
 
 ---
 
@@ -76,7 +76,7 @@ NEXTCLOUD_ADMIN_PASSWORD=admin123
 
 > **¿Por qué definimos `HOST_IP` acá?** Centralizar la IP en el archivo `.env` permite inyectarla automáticamente en la configuración inicial del contenedor sin tener que ejecutar múltiples comandos manuales por consola después de la instalación.
 
-![Paso 3 - Configurar archivo .env](./instalacion/img/windows/paso3.png)
+![Paso 3 - Configurar archivo .env](./instalacion/windows/paso3.png)
 
 ---
 
@@ -142,7 +142,7 @@ networks:
 
 > **Nota:** La imagen oficial `nextcloud:apache` acepta estas variables de entorno nativas para configurar los dominios de confianza (`NEXTCLOUD_TRUSTED_DOMAINS`) durante la instalación inicial. Además, las variables `OVERWRITE*` crean automáticamente el archivo `reverse-proxy.config.php` (esencial para las conexiones en red local) cada vez que el contenedor arranca. Así, cuando se inicia sesión desde la app de Android o iOS, el servidor sabe que debe devolver el token de acceso a `http://HOST_IP:8080` y no a `localhost`.
 
-![Paso 4 - Crear compose.yaml](./instalacion/img/windows/paso4.png)
+![Paso 4 - Crear compose.yaml](./instalacion/windows/paso4.png)
 
 ---
 
@@ -158,7 +158,7 @@ docker compose up -d
 
 *(Si aparece una ventana emergente del Firewall de Windows Defender solicitando permisos para Docker, marcar las casillas de redes privadas/públicas y hacer clic en **Permitir acceso**).*
 
-![Paso 5 - Levantar contenedores](./instalacion/img/windows/paso51.png)
+![Paso 5 - Levantar contenedores](./instalacion/windows/paso51.png)
 
 > **Nota sobre los tiempos:** La primera vez puede tardar entre 2 y 3 minutos mientras descarga las imágenes e inicializa la base de datos. Es crucial esperar a que finalice antes de intentar entrar desde el navegador.
 
@@ -171,7 +171,7 @@ docker compose up -d
    docker compose ps
    ```
 
-![Paso 5 - Verificación de contenedores](./instalacion/img/windows/paso52.png)
+![Paso 5 - Verificación de contenedores](./instalacion/windows/paso52.png)
 
 ---
 
@@ -181,14 +181,14 @@ docker compose up -d
    * Ingresar a `http://TU_IP:8080` (por ejemplo, `http://10.0.7.13:8080`).
    * Iniciar sesión con el usuario **`admin`** y la contraseña **`admin123`**.
 
-![Paso 6 - Inicio de sesión desde el navegador de la PC](./instalacion/img/windows/paso61.png)
+![Paso 6 - Inicio de sesión desde el navegador de la PC](./instalacion/windows/paso61.png)
 
 2. **Desde el celular (Navegador o App oficial de Nextcloud):**
    * Asegurarse de estar conectado a la misma red Wi-Fi que el servidor.
    * Escribir la dirección completa incluyendo `http://` y el puerto `:8080`:
      `http://TU_IP:8080`
 
-![Paso 6 - Conexión desde dispositivo móvil](./instalacion/img/windows/paso62.jpeg)
+![Paso 6 - Conexión desde dispositivo móvil](./instalacion/windows/paso62.jpeg)
 
 ---
 
