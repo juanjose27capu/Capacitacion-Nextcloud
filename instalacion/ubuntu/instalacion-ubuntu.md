@@ -46,7 +46,7 @@ mkdir nube-local
 cd nube-local
 ```
 
-![Paso 2 - Crear carpeta del proyecto](./instalacion/ubuntu/paso2.png)
+![Paso 2 - Crear carpeta del proyecto](~/instalacion/ubuntu/paso2.png)
 
 ---
 
