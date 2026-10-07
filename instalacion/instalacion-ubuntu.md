@@ -31,7 +31,7 @@ newgrp docker
 hostname -I | awk '{print $1}'
 ```
 
-![Paso 1 - Obtener la IP local](instalacion/ubuntu/paso1.png)
+![Paso 1 - Obtener la IP local](ubuntu/paso1.png)
 
 ---
 
@@ -46,7 +46,7 @@ mkdir nube-local
 cd nube-local
 ```
 
-![Paso 2 - Crear carpeta del proyecto](instalacion/ubuntu/paso2.png)
+![Paso 2 - Crear carpeta del proyecto](ubuntu/paso2.png)
 
 ---
 
@@ -58,7 +58,7 @@ Crear el archivo `.env` ejecutando `nano .env` y pegar el siguiente contenido (r
 nano .env
 ```
 
-![Paso 3 - Crear archivo .env](instalacion/ubuntu/paso31.png)
+![Paso 3 - Crear archivo .env](ubuntu/paso31.png)
 
 Pegar el siguiente contenido en el editor nano, guardar los cambios (`Ctrl + O`, luego `Enter`) y salir (`Ctrl + X`):
 
@@ -79,7 +79,7 @@ NEXTCLOUD_ADMIN_PASSWORD=admin123
 
 > **¿Por qué definimos `HOST_IP` acá?** Centralizar la IP en el archivo `.env` permite inyectarla automáticamente en la configuración inicial del contenedor sin tener que ejecutar múltiples comandos manuales por consola después de la instalación. 
 
-![Paso 3 - Configurar archivo .env](instalacion/ubuntu/paso32.png)
+![Paso 3 - Configurar archivo .env](ubuntu/paso32.png)
 
 ---
 
@@ -91,7 +91,7 @@ Ejecutar `nano compose.yaml` y pegar el siguiente texto:
 nano compose.yaml
 ```
 
-![Paso 4 - Crear archivo compose.yaml](instalacion/ubuntu/paso41.png)
+![Paso 4 - Crear archivo compose.yaml](ubuntu/paso41.png)
 
 Pegar el siguiente texto, guardar los cambios y salir del editor:
 
@@ -147,7 +147,7 @@ networks:
 
 > **Nota:** La imagen oficial `nextcloud:apache` acepta estas variables de entorno nativas para configurar los dominios de confianza (`NEXTCLOUD_TRUSTED_DOMAINS`) durante la instalación inicial. Además, las variables `OVERWRITE*` crean automáticamente el archivo `reverse-proxy.config.php` (esencial para las conexiones en red local) cada vez que el contenedor arranca. Así, cuando se inicia sesión desde la app de Android o iOS, el servidor sabe que debe devolver el token de acceso a `http://HOST_IP:8080` y no a `localhost`.
 
-![Paso 4 - Contenido compose.yaml](instalacion/ubuntu/paso42.png)
+![Paso 4 - Contenido compose.yaml](ubuntu/paso42.png)
 
 ---
 
@@ -159,7 +159,7 @@ En la terminal, dentro de la carpeta `nube-local`, ejecutar:
 docker compose up -d
 ```
 
-![Paso 5 - Levantar contenedores](instalacion/ubuntu/paso51.png)
+![Paso 5 - Levantar contenedores](ubuntu/paso51.png)
 
 > **Importante:** La primera vez puede tardar entre 2 y 3 minutos mientras descarga las imágenes e inicializa la base de datos. Es crucial esperar a que finalice antes de intentar entrar desde el navegador.
 
@@ -172,7 +172,7 @@ docker compose up -d
    docker compose ps
    ```
 
-![Paso 5 - Verificación de logs y contenedores](instalacion/ubuntu/paso52.png)
+![Paso 5 - Verificación de logs y contenedores](ubuntu/paso52.png)
 
 ---
 
@@ -182,16 +182,16 @@ docker compose up -d
    * Ingresar a `http://TU_IP:8080` (por ejemplo, `http://10.0.8.216:8080`).
    * Iniciar sesión con el usuario **`admin`** y la contraseña **`admin123`**.
 
-![Paso 6 - Inicio de sesión en Nextcloud](instalacion/ubuntu/paso61.png)
+![Paso 6 - Inicio de sesión en Nextcloud](ubuntu/paso61.png)
 
-![Paso 6 - Dashboard de Nextcloud](instalacion/ubuntu/paso62.png)
+![Paso 6 - Dashboard de Nextcloud](ubuntu/paso62.png)
 
 2. **Desde el celular (Navegador o App oficial de Nextcloud):**
    * Asegurarse de estar conectado a la misma red Wi-Fi que el servidor.
    * Escribe la dirección completa incluyendo `http://` y el puerto `:8080`:
      `http://TU_IP:8080`
 
-![Paso 6 - Acceso desde dispositivo móvil](instalacion/ubuntu/paso63.jpeg)
+![Paso 6 - Acceso desde dispositivo móvil](ubuntu/paso63.jpeg)
 
 ---
 
