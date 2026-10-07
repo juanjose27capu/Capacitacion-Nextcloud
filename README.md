@@ -1,9 +1,5 @@
 # Capacitación en despliegue y administración de Nextcloud
 
-Documentación y guías prácticas para llevar a cabo las prácticas de la capacitación de Nextcloud. 
-
-Dictada en: Laboratorio de Informática Aplicada - Departamento de Informática - Facultad de Ciencias Exactas, Físicas y Naturales - Universidad Nacional de San Juan.  
-
 ## 1. Resumen 
 
 El presente espacio reúne el material técnico necesario para llevar a cabo las prácticas de implementación, configuración y mantenimiento de una infraestructura de una nube privada y local utilizando Nextcloud mediante contenedores.
@@ -58,6 +54,6 @@ Capacitacion-Nextcloud/
 ```
 
 
-Laboratorio de Informática Aplicada
+Laboratorio de Informática Aplicada - Departamento de Informática - Facultad de Ciencias Exactas, Físicas y Naturales - Universidad Nacional de San Juan.  
 
 Material de uso académico.
