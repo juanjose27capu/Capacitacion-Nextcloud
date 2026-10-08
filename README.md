@@ -6,6 +6,21 @@ El presente espacio reúne el material técnico necesario para llevar a cabo las
 
 El objetivo de esta capacitación es dotar a los asistentes de los conocimientos fundamentales para desplegar un entorno de almacenamiento y colaboración autoalojado, garantizando la soberanía de los datos, la disponibilidad del servicio y la correcta administración del ciclo de vida de la aplicación en entornos tanto de desarrollo como de producción.
 
+La organización se organiza según el siguiente esquema:
+
+```
+Capacitacion-Nextcloud/
+├── README.md
+├── instalacion/
+│   ├── tutorial-instalacion-ubuntu.md
+│   ├── tutorial-instalacion-windows.md
+│   └── limpieza-total.md
+├── office-collabora/
+│   └── guia-instalacion-office.md
+└── mantenimiento/
+    └── guia-mantenimiento.md
+```
+
 ## 2. Tutoriales de instalación
 
 En esta sección se encuentran los procedimientos paso a paso para la preparación del entorno, el despliegue inicial de los contenedores y el restablecimiento del sistema en diferentes sistemas operativos.
@@ -37,21 +52,6 @@ Acceda a la Guía de mantenimiento, copias de seguridad y actualizaciones para c
 - Procedimientos seguros de actualización de imágenes de contenedores y migración de versiones de Nextcloud.
 
 - Estructura sugerida del repositorio
-
-Para que todos los enlaces de este documento funcionen correctamente, se organizan los archivos y directorios del repositorio bajo el siguiente esquema:
-
-```
-Capacitacion-Nextcloud/
-├── README.md
-├── instalacion/
-│   ├── tutorial-instalacion-ubuntu.md
-│   ├── tutorial-instalacion-windows.md
-│   └── limpieza-total.md
-├── office-collabora/
-│   └── guia-instalacion-office.md
-└── mantenimiento/
-    └── guia-mantenimiento.md
-```
 
 
 Laboratorio de Informática Aplicada - Departamento de Informática - Facultad de Ciencias Exactas, Físicas y Naturales - Universidad Nacional de San Juan.  
