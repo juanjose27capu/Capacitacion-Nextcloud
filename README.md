@@ -1,7 +1,5 @@
 # Capacitación en despliegue y administración de Nextcloud
 
----
-
 ## 1. Resumen 
 
 El presente espacio reúne el material técnico necesario para llevar a cabo las prácticas de implementación, configuración y mantenimiento de una infraestructura de una nube privada y local utilizando Nextcloud mediante contenedores.
@@ -23,8 +21,6 @@ Capacitacion-Nextcloud/
     └── guia-mantenimiento.md
 ```
 
----
-
 ## 2. Tutoriales de instalación
 
 En esta sección se encuentran los procedimientos paso a paso para la preparación del entorno, el despliegue inicial de los contenedores y el restablecimiento del sistema en diferentes sistemas operativos.
@@ -35,15 +31,11 @@ Entorno Windows: Consulte la Guía de instalación en Windows para la configurac
 
 Restablecimiento del entorno: En caso de requerir eliminar los contenedores, volúmenes y directorios creados durante las prácticas para iniciar desde cero, siga el procedimiento de limpieza total del entorno.
 
----
-
 ## 3. Suite ofimática: Nextcloud Office y Collabora Online
 
 Para extender las capacidades de almacenamiento hacia un entorno de trabajo colaborativo en tiempo real, se aborda la integración de herramientas de edición de documentos.
 
 En la Guía de instalación de Nextcloud Office y Collabora Online Built-in CODE Server se detallan los requerimientos técnicos, la activación de las aplicaciones correspondientes dentro del ecosistema de Nextcloud y los parámetros de configuración necesarios para poner en funcionamiento el servidor de desarrollo integrado (Built-in CODE Server).
-
----
 
 ## 4. Mantenimiento: Copias de seguridad y actualizaciones
 
