@@ -1,12 +1,14 @@
 # Capacitación en despliegue y administración de Nextcloud
 
+---
+
 ## 1. Resumen 
 
 El presente espacio reúne el material técnico necesario para llevar a cabo las prácticas de implementación, configuración y mantenimiento de una infraestructura de una nube privada y local utilizando Nextcloud mediante contenedores.
 
 El objetivo de esta capacitación es dotar a los asistentes de los conocimientos fundamentales para desplegar un entorno de almacenamiento y colaboración autoalojado, garantizando la soberanía de los datos, la disponibilidad del servicio y la correcta administración del ciclo de vida de la aplicación en entornos tanto de desarrollo como de producción.
 
-La organización se organiza según el siguiente esquema:
+El repositorio se organiza según el siguiente esquema:
 
 ```
 Capacitacion-Nextcloud/
@@ -17,21 +19,23 @@ Capacitacion-Nextcloud/
 │   └── limpieza-total.md
 ├── office-collabora/
 │   └── guia-instalacion-office.md
-└── mantenimiento/
+└── guia-mantenimiento/
     └── guia-mantenimiento.md
 ```
+
+---
 
 ## 2. Tutoriales de instalación
 
 En esta sección se encuentran los procedimientos paso a paso para la preparación del entorno, el despliegue inicial de los contenedores y el restablecimiento del sistema en diferentes sistemas operativos.
 
-Puede acceder al Directorio de Instalación completo o dirigirse directamente a la guía correspondiente a su entorno de trabajo:
-
 Entorno Linux: Consulte la Guía de instalación en Ubuntu para el despliegue nativo mediante Docker en distribuciones basadas en Debian/Ubuntu.
 
 Entorno Windows: Consulte la Guía de instalación en Windows para la configuración del entorno mediante WSL2 y Docker Desktop.
 
-Restablecimiento del entorno: En caso de requerir eliminar los contenedores, volúmenes y directorios creados durante las prácticas para iniciar desde cero, siga el procedimiento de Limpieza total del entorno.
+Restablecimiento del entorno: En caso de requerir eliminar los contenedores, volúmenes y directorios creados durante las prácticas para iniciar desde cero, siga el procedimiento de limpieza total del entorno.
+
+---
 
 ## 3. Suite ofimática: Nextcloud Office y Collabora Online
 
@@ -39,9 +43,11 @@ Para extender las capacidades de almacenamiento hacia un entorno de trabajo cola
 
 En la Guía de instalación de Nextcloud Office y Collabora Online Built-in CODE Server se detallan los requerimientos técnicos, la activación de las aplicaciones correspondientes dentro del ecosistema de Nextcloud y los parámetros de configuración necesarios para poner en funcionamiento el servidor de desarrollo integrado (Built-in CODE Server).
 
+---
+
 ## 4. Mantenimiento: Copias de seguridad y actualizaciones
 
-La continuidad operativa de cualquier servicio en producción depende de una estrategia sólida de resguardo de información y de la aplicación periódica de parches de seguridad.
+La continuidad operativa de cualquier servicio en producción depende de una estrategia sólida de resguardo de información y de la actualización periódica mediante parches de seguridad.
 
 Acceda a la Guía de mantenimiento, copias de seguridad y actualizaciones para consultar los protocolos estandarizados sobre:
 
@@ -53,7 +59,6 @@ Acceda a la Guía de mantenimiento, copias de seguridad y actualizaciones para c
 
 - Estructura sugerida del repositorio
 
+---
 
-Laboratorio de Informática Aplicada - Departamento de Informática - Facultad de Ciencias Exactas, Físicas y Naturales - Universidad Nacional de San Juan.  
-
-Material de uso académico.
+Laboratorio de Informática Aplicada - Departamento de Informática - FCEFN - UNSJ
