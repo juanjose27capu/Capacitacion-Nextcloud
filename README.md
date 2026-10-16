@@ -1,5 +1,5 @@
-# Capacitación en despliegue y administración de Nextcloud
-(./portada.png)
+![ Capacitación en despliegue y administración de Nextcloud](./portada.png)
+
 ## 1. Resumen 
 
 El presente espacio reúne el material técnico necesario para llevar a cabo las prácticas de implementación, configuración y mantenimiento de una infraestructura de una nube privada y local utilizando Nextcloud mediante contenedores.
