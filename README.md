@@ -1,4 +1,6 @@
-![ Capacitación en despliegue y administración de Nextcloud](./portada.png)
+# Capacitación en despliegue y administración de Nextcloud
+
+![Portada de capacitación en despliegue y administración de Nextcloud](./portada.png)
 
 ## 1. Resumen 
 
