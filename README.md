@@ -4,9 +4,9 @@
 
 ## 1. Resumen 
 
-El presente espacio reúne el material técnico necesario para llevar a cabo las prácticas de implementación, configuración y mantenimiento de una infraestructura de una nube privada y local utilizando Nextcloud mediante contenedores.
+Este espacio reúne el material necesario para llevar a cabo las prácticas de implementación, configuración y mantenimiento de una infraestructura de una nube privada y local utilizando Nextcloud mediante contenedores.
 
-El objetivo de esta capacitación es dotar a los asistentes de los conocimientos fundamentales para desplegar un entorno de almacenamiento y colaboración autoalojado, garantizando la soberanía de los datos, la disponibilidad del servicio y la correcta administración del ciclo de vida de la aplicación en entornos tanto de desarrollo como de producción.
+El objetivo de esta capacitación es dotar a los asistentes de los conocimientos fundamentales para desplegar un entorno de almacenamiento y colaboración autoalojado, con el fin de promover la soberanía de los datos y la correcta administración del ciclo de vida de la aplicación en entornos tanto de desarrollo como de producción.
 
 El repositorio se organiza según el siguiente esquema:
 
@@ -23,7 +23,7 @@ Capacitacion-Nextcloud/
     └── guia-mantenimiento.md
 ```
 
-## 2. Tutoriales de instalación
+## 2. [Tutoriales de instalación](./instalacion)
 
 En esta sección se encuentran los procedimientos paso a paso para la preparación del entorno, el despliegue inicial de los contenedores y el restablecimiento del sistema en diferentes sistemas operativos.
 
