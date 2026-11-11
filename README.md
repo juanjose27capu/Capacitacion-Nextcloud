@@ -23,27 +23,27 @@ Capacitacion-Nextcloud/
     └── guia-mantenimiento.md
 ```
 
-## 2. [Tutoriales de instalación](./instalacion)
+## 2. Tutoriales de instalación
 
 En esta sección se encuentran los procedimientos paso a paso para la preparación del entorno, el despliegue inicial de los contenedores y el restablecimiento del sistema en diferentes sistemas operativos.
 
-Entorno Linux: Consulte la Guía de instalación en Ubuntu para el despliegue nativo mediante Docker en distribuciones basadas en Debian/Ubuntu.
+[Linux](./instalacion/ubuntu/README.md): Consulte la Guía de instalación en Ubuntu para el despliegue nativo mediante Docker en distribuciones basadas en Debian/Ubuntu.
 
-Entorno Windows: Consulte la Guía de instalación en Windows para la configuración del entorno mediante WSL2 y Docker Desktop.
+[Windows](./instalacion/windows/README.md): Consulte la Guía de instalación en Windows para la configuración del entorno mediante WSL2 y Docker Desktop.
 
-Restablecimiento del entorno: En caso de requerir eliminar los contenedores, volúmenes y directorios creados durante las prácticas para iniciar desde cero, siga el procedimiento de limpieza total del entorno.
+[Restablecimiento del entorno](./instalacion/limpieza-total.md): En caso de requerir eliminar los contenedores, volúmenes y directorios creados durante las prácticas para iniciar desde cero, siga el procedimiento de limpieza total del entorno.
 
 ## 3. Suite ofimática: Nextcloud Office y Collabora Online
 
 Para extender las capacidades de almacenamiento hacia un entorno de trabajo colaborativo en tiempo real, se aborda la integración de herramientas de edición de documentos.
 
-En la Guía de instalación de Nextcloud Office y Collabora Online Built-in CODE Server se detallan los requerimientos técnicos, la activación de las aplicaciones correspondientes dentro del ecosistema de Nextcloud y los parámetros de configuración necesarios para poner en funcionamiento el servidor de desarrollo integrado (Built-in CODE Server).
+En la [guía de instalación de Nextcloud Office y Collabora Online Built-in CODE Server](./office-collabora/README.md) se detallan los requerimientos técnicos, la activación de las aplicaciones correspondientes dentro del ecosistema de Nextcloud y los parámetros de configuración necesarios para poner en funcionamiento el servidor de desarrollo integrado.
 
 ## 4. Mantenimiento: Copias de seguridad y actualizaciones
 
 La continuidad operativa de cualquier servicio en producción depende de una estrategia sólida de resguardo de información y de la actualización periódica mediante parches de seguridad.
 
-Acceda a la Guía de mantenimiento, copias de seguridad y actualizaciones para consultar los protocolos estandarizados sobre:
+Acceda a la [guía de mantenimiento](./guia-mantenimiento/README.md) para consultar los procedimientos sobre:
 
 - Activación del modo de mantenimiento en la instancia.
 
